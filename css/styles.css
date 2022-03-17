@@ -1,0 +1,386 @@
+/* @font-face {
+    font-family:"charter";
+    src: url("../fonts/charter-regular.otf");
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family:"charter";
+    src: url("../fonts/charter-italic.otf");
+    font-style: italic;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family:"charter";
+    src: url("../fonts/charter-bold.otf");
+    font-style: normal;
+    font-weight: bold;
+}
+
+@font-face {
+    font-family:"charter";
+    src: url("../fonts/charter-bold-italic.otf");
+    font-style: italic;
+    font-weight: bold; 
+}*/
+
+/* La pseudo clase root es el elemento mas superior en el html  */
+:root {
+    font-size: 16px;
+    /* --whitey30: white;
+    --white20: #A5A3A5;
+    --white10: #3A3539; */
+    
+    --gray30: #616161;
+    --gary20: #424242;
+    --gray10: #212121;
+}
+
+
+body {
+    color: var(--gray20);
+    font-family: 'Roboto', sans-serif;
+    background: white;
+    margin: 0;
+
+    /* font-family: "charter"; Asi se agregan fuentes personalizadas */
+}
+
+a {
+    color: var(--gray30);
+}
+
+/*.header {
+     position: sticky;
+    inset-block-start: -45px; <--- estas dos fueron pasadas al media query 
+}*/
+
+ .header-content{
+    padding-inline: 20px;
+    /* position: relative;
+    inset-block-start: 65px; <--- estas dos fueron pasadas al media query */
+} 
+
+header{
+    margin-block-start: 20px;
+    font-size: 14px;
+    color: var(--gray30); 
+    border-left: 4px solid #C4C4C4; 
+    padding-inline-start: 16px;
+    /* position: absolute;
+    inset-block-start: 0; <--- estas dos fueron pasadas al media query*/
+    /* inset block start es el top */
+    /* inset-inline-start: -208px;
+    inline-size: 188px; <--- estas dos fueron pasadas al media query*/
+    /* top left botton right z-inex <--- se activan estos elementos al poner relative*/
+    /* position: absolute;
+    top: 0;
+    left: -232px;
+    width: 188px;
+    top: 70px; */
+    /* background: rebeccapurple; */
+}
+
+header li {
+    color: var(--gray20);
+    margin-block-end: 16px;
+}
+
+header a {
+    color: var(--gray20);  
+    text-decoration: none;  
+}
+
+header a:hover{
+    color: var(--gray30);
+}
+
+nav details summary {
+    font-weight: bold;
+}
+
+h1, h2, h3 {
+    font-weight: 400;
+}
+
+h1 {
+    font-size: 60px;
+    /* font-size: 3,75em; Equivale a los 60px pasados a em. Se divide 60/16 ya que el HTML viene por defecto con 16px y es el elemento padre del h1. Igual abajo -manito señalando hacia abajo- */ 
+    /* margin: 64px 0 16px; */
+    margin-block-start: 80px;
+    margin-block-end: 16px;
+    color: var(--gray10);
+} 
+
+h1 + p {
+    color: var(--gray10);
+}
+
+.span-text-h3 {
+    font-weight: bold ;
+}
+
+/* h1 + p {
+    background: #FEC62E;
+    margin-bottom: 64px;
+    COLAPSO DE MARGENES*** Los margenes no se suman, se unen. El hr que esta debajo de este p tenia el mismo margen hacia arriba, que este hacia abajo, por lo tanto colisionan. Se elimina y queda igual.
+}   El colapso de margenes solo aplica con elementos tipo bloque y en forma vertical*/
+
+hr {
+    /* margin: 64px 0; */
+    margin-block: 64px ;
+    border: 1px solid rgba(97, 97, 97, 0.2);;
+}
+
+h2{
+    font-size: 32px;
+    /* margin: 64px 0 40px;*/
+    margin-block-start: 100px;
+    margin-block-end: 40px;
+    /* font-weight: 600; */
+    color: var(--gray10);
+}
+
+h3 {
+    font-size: 24px;
+    /* margin: 16px 0 24px; */
+    margin-block-start: 40px;
+    margin-block-end: 16px;
+    color: var(--gary20);
+}
+
+pre {
+    background: #E5E5E5;
+    font-family: 'Roboto';
+    line-height: 24px;
+    padding-block: 40px;
+    padding-inline: 40px;
+    overflow: auto;
+    border-radius: 8px;
+    /* border: 8px solid #5551FF;
+    box-shadow: -10px 10px 0 0 #ABAAF6; */
+    margin-block-end: 30px;
+    font-size: 16px;
+}
+
+blockquote {
+    margin-block: 80px;
+    font-size: 24px;
+    /* background: var(--gray10); */
+    /* border-radius: 8px; */
+    padding-inline-start: 16px;
+    /* padding-block: 24px; */
+    line-height: 32px;
+    border-left: 4px solid var(--gray10);
+} 
+
+blockquote p {
+    color: var(--gray20);
+}
+
+blockquote span {
+    color: var(--gray30);
+}
+
+blockquote span::before{
+    content: '-';
+}
+
+/* .header{
+    position: sticky;
+    top: 0;
+}
+
+.header-content{
+    position: relative;
+} */
+
+/* .main {
+    border: 1px solid yellow; 
+} */
+
+.wrapper {
+    /* border: 1px solid red; */
+    max-inline-size: 902px;
+    /* inline-size es lo que diriamos el width */
+    margin: auto;
+}
+
+.main-content {
+    /* border: 1px solid green; */
+    padding-inline: 16px;
+}
+
+h3 + p {
+    color: var(--gray20);
+    line-height: 24px;
+}
+
+.hero {
+    background-image: linear-gradient(96.07deg, #314755 30.63%, #26A0DA 102.18%);
+    block-size: 50px;
+}
+
+.section-content img {
+    margin-block-start: 40px;
+    display: block;
+    max-inline-size: 100%;
+}
+
+/* .section-content{
+    margin-top: 164px;
+} */
+
+.section-content:first-of-type{
+    margin: 0;
+}
+
+.section-content ol li {
+    margin-block-end: 16px;
+}
+
+
+.section-content ul li{
+    margin-block-end: 16px;
+}
+
+/* .section-content + hr {
+    display: none;
+} */
+
+.section-content {
+    counter-reset: titleList;
+}
+
+.section-content h3 {
+    counter-increment: titleList;
+    /* padding-bottom: 8px;
+    position: relative;
+    background: red; */
+}
+
+.section-content h3::before {
+    content: counter(titleList, decimal)'. ';
+}
+
+/* .slider {
+    border: 1px solid red; 
+ } */
+
+ .slider-container{
+    /* block-size: 100px; <-- esto era el heigth*/
+    /* margin-block-start: 16px; */
+    display: block;
+    overflow: auto;
+    scroll-behavior: smooth;
+    white-space: nowrap;
+    font-size: 0;
+    /* border: 1px solid gold; */
+ }
+
+ .video{
+    margin: 0;
+    display: inline-block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
+    /* border: 1px solid turquoise; */
+ }
+
+ .slider-bullet-list{
+    text-align: center;
+    margin-block-start: 10px;
+ }
+
+ .slider-bullet {
+    display: inline-block;
+    inline-size: 15px;
+    block-size: 15px;
+    border-radius: 50%;
+    background: var(--gary20);
+ }
+
+.p-suscribete {
+    font-size: 24px;
+    margin-block-end: 16px;
+}
+
+.form {
+    position: relative;
+}
+
+.form input {
+    /* inline-size: 100%; */
+    inline-size: 280px;
+    border: 1px solid var(--gray30);
+    box-sizing: border-box;
+    background: white;
+    border-radius: 50px;
+    padding-inline: 16px;
+    padding-block: 12px;
+    color: var(--gray30);
+    font-size: 14px;
+    display: inline-block;
+    margin-block-end: 24px;
+    margin-inline-end: 16px;
+}
+
+.container-buttom{
+    position: relative;
+    display: inline-block;
+}
+
+.form input[type="submit"]{
+    background: black;
+    border: none;
+    color: white;
+    font-weight: 600;
+    inline-size: 110px;
+    padding-block-end: 14px;
+    position: absolute;
+    inset-inline-start: 190px;
+}
+
+.form ::-webkit-input-placeholder{
+    color: var(--gray20);
+}
+
+@media screen and (min-width: 1366px) {
+   
+    /* .hero {
+        block-size: 350px;
+    } */
+
+    /* .header {
+        position: sticky;
+        inset-block-start: -45px;
+    }
+    .header-content{
+        position: relative;
+        inset-block-start: 65px;
+        padding-inline: 0;
+    }
+    
+    header{ 
+        position: absolute;
+        inset-block-start: 0;
+        inset-inline-start: -208px;
+        inline-size: 188px;
+    } */
+
+    /* h1{
+        font-size: 60px;
+        margin-block-start: 64px;
+
+    }
+
+    h2{
+        font-size: 2em;
+    }
+
+    h3 {
+        font-size: 1,5em;
+    } */
+}
